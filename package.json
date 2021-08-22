@@ -1,0 +1,29 @@
+{
+  "name": "aprendaexpress",
+  "description": "Tudo sobre Express(NodeJs) por Itacir Pompeu",
+  "version": "1.0.0",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/JeffyMesquita/aprendaExpress.git"
+  },
+  "keywords": [
+    "nodejs",
+    "express",
+    "mongoose"
+  ],
+  "author": "Jeferson Antonio Mesquita",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/JeffyMesquita/aprendaExpress/issues"
+  },
+  "homepage": "https://github.com/JeffyMesquita/aprendaExpress#readme",
+  "dependencies": {
+    "express": "^4.17.1",
+    "mongoose": "^5.13.7"
+  }
+}
