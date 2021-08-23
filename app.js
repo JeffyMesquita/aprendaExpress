@@ -1,22 +1,17 @@
-const express = require('express');
-const mongoose = require('mongoose');
+const express = require("express");
 const app = express();
+const connectDb = require("./src/settings/connect")
+const { createUserController, getUserController } = require("./src/controllers/users/index")
 
-const User = require('./src/models/user');
-const uri = 'mongodb://localhost:27017/aprendaExpress'
+connectDb();
 
-mongoose.connect(uri, {
-  useNewUrlParser: true,
-  useUnifiedTopology: true,
-  useFindAndModify: true,
-  useCreateIndex: true,
-});
+const User = require("./src/models/user");
 
-const createUserController = (req, res) => {
-  return User.create(req.body)
-    .then( user => res.status(201).json(user))
-    .catch( error => res.status(500).json({error: [err.message]}));   
-}
-app.post('/api/user', createUserController)
+//middlewares
+app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
+
+app.post("/api/user", createUserController);
+app.get("/api/user/:id", getUserController);
 
 app.listen(3000);
